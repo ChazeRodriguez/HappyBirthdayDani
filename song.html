@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music for You</title>
+    <link rel="stylesheet" href="src/song.css">
+    <link rel="stylesheet" href="src/musicPlayer.css">
+</head>
+<body>
+    <!-- Floating Music Notes -->
+    <div class="floating-notes">
+        <div class="note note-1">♪</div>
+        <div class="note note-2">♫</div>
+        <div class="note note-3">♪</div>
+        <div class="note note-4">♫</div>
+        <div class="note note-5">♪</div>
+        <div class="note note-6">♫</div>
+        <div class="note note-7">♪</div>
+        <div class="note note-8">♫</div>
+    </div>
+    
+    <!-- Floating Hearts -->
+    <div class="floating-hearts">
+        <div class="heart heart-1">♥</div>
+        <div class="heart heart-2">♥</div>
+        <div class="heart heart-3">♥</div>
+        <div class="heart heart-4">♥</div>
+        <div class="heart heart-5">♥</div>
+    </div>
+    
+    <button class="back-button" id="backToMenu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Menu
+    </button>
+    
+    <div class="song-container">
+        <div class="song-header">
+            <h1 class="song-title">Music that reminds me of you MyLove ^-^</h1>
+        </div>
+        
+        <div class="video-wrapper">
+            <iframe 
+                style="border-radius:12px" 
+                src="https://open.spotify.com/embed/track/3HAsf0o0TJY9WL4zKCzE3u?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                frameBorder="0" 
+                allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+            </iframe>
+        </div>
+        
+        <button class="play-full-song-btn" id="playFullSongBtn">
+            ▶ Play Full Song
+        </button>
+    </div>
+    
+    <script src="src/musicPlayer.js"></script>
+    <script src="src/song.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const playBtn = document.getElementById('playFullSongBtn');
+            const songUrl = 'src/Images/music/HONNE - free love (dream edit).mp3';
+            
+            playBtn.addEventListener('click', () => {
+                if (window.musicPlayer) {
+                    window.musicPlayer.loadAndPlay(songUrl);
+                    playBtn.textContent = '🎵 Playing...';
+                    playBtn.disabled = true;
+                    playBtn.style.background = '#90EE90';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
