@@ -7,7 +7,7 @@ document.getElementById('backToMenu').addEventListener('click', function() {
 document.addEventListener('DOMContentLoaded', () => {
     const envelopeWrapper = document.getElementById('envelopeWrapper');
     const letterContainer = document.getElementById('letterContainer');
-    const songUrl = 'src/Images/music/HONNE - free love (dream edit).mp3';
+    const songUrl = 'assets/images/music/HONNE - free love (dream edit).mp3';
     
     envelopeWrapper.addEventListener('click', function() {
         // Play music when opening envelope
