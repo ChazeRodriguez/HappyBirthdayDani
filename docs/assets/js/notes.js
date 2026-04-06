@@ -7,7 +7,16 @@ document.getElementById('backToMenu').addEventListener('click', function() {
 document.addEventListener('DOMContentLoaded', () => {
     const envelopeWrapper = document.getElementById('envelopeWrapper');
     const letterContainer = document.getElementById('letterContainer');
-    const songUrl = 'assets/images/music/HONNE - free love (dream edit).mp3';
+    // 🔐 Configurable media paths - prevents broken links & eases deployment
+const MEDIA_CONFIG = {
+  basePath: window.HAPPY_BIRTHDAY_CONFIG?.mediaPath || 'assets/images/music/',
+  songs: {
+    main: 'HONNE - free love (dream edit).mp3'
+  }
+};
+
+// Usage:
+const songUrl = `${MEDIA_CONFIG.basePath}${MEDIA_CONFIG.songs.main}`;
     
     envelopeWrapper.addEventListener('click', function() {
         // Play music when opening envelope
