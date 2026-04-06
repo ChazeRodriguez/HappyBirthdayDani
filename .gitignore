@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment & secrets (CRITICAL)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.crt
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build & cache
+dist/
+build/
+.cache/
+*.log
+
+# Media (if private/large)
+assets/images/private/
+assets/music/private/
+
+# GitHub Pages deploy (if using gh-pages branch)
+/gh-pages/
